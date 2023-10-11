@@ -2,86 +2,41 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.1/codemirror.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.1/codemirror.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.1/mode/javascript/javascript.js"></script>
-    <style>
-        body {
-          font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        .dropdown {
-          float: right;
-        }
-        
-        .dropdown .dropbtn {
-          font-size: 16px;  
-          border: none;
-          outline: none;
-          color: white;
-          padding: 14px 16px;
-          background-color: inherit;
-          font-family: inherit;
-          margin: 0;
-        }
-        
-        .dropdown:hover .dropbtn {
-          background-color: red;
-        }
-        
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #f9f9f9;
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
-        }
-        
-        .dropdown-content strong {
-          float: none;
-          color: black;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-          text-align: left;
-        }
-        
-        .dropdown-content strong:hover {
-          background-color: #ddd;
-        }
-        
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
-        </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.1/codemirror.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.1/codemirror.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.1/mode/javascript/javascript.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.1/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/mode/clike/clike.js"></script>
 </head>
 
 <body>
-    <div id="codeEditorContainer">
-        <div class="dropdown">
-            <button class="dropbtn">Dropdown</button>
-            <div class="dropdown-content">
-                <strong>JAVA</strong>
-                <strong>JavaScript</strong>
-                <strong>Python</strong>
-            </div>
-          </div>
-            <button class="Submit">SUBMIT </button>
-        </div>
-    </div>
-    <script>
-        var myCodeMirror = CodeMirror(document.getElementById("codeEditorContainer"), {
-            mode: "javascript",
-            theme: "default",
-            lineNumbers: true,
-            autofocus: true,
-        });
-    </script>
+  <div id="langDropDown">
+    <label for="languageSelector">Select a programming language:</label>
+    <select id="languageSelector">
+      <option value="java">Java</option>
+      <option value="python">Python</option>
+      <optiion value="C++">C++</optiion>
+    </select>
+  </div>
+
+  <div id="codeEditorContainer"> </div>
+  
+  <button id="compile-button">Compile/Execute</button>
+  
+  <div id="output-area"> </div>
+  <script>
+    var myCodeMirror = CodeMirror(document.getElementById("codeEditorContainer"), {
+      mode: "javascript",
+      theme: "default",
+      lineNumbers: true,
+      autofocus: true,
+    });
+  </script>
 </body>
 
 </html>
